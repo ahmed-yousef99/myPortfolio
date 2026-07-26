@@ -1,0 +1,58 @@
+import { motion, type Variants } from 'framer-motion'
+import { useLanguage } from '@/hooks/useLanguage'
+import { Section } from '@/components/layout/section'
+import { ProcessStep } from '@/components/cards/process-step'
+
+const stepKeys = ['discovery', 'planning', 'development', 'review', 'launch'] as const
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+}
+
+interface ProcessProps {
+  className?: string
+}
+
+function Process({ className }: ProcessProps) {
+  const { t, lang } = useLanguage()
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: lang === 'ar' ? 20 : -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  }
+
+  return (
+    <Section
+      id="process"
+      eyebrow={t('process.eyebrow')}
+      title={t('process.title')}
+      subtitle={t('process.subtitle')}
+      className={className}
+    >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        className="max-w-2xl"
+      >
+        {stepKeys.map((key, i) => (
+          <motion.div key={key} variants={itemVariants}>
+            <ProcessStep
+              number={i + 1}
+              title={t(`process.steps.${key}.title`)}
+              description={t(`process.steps.${key}.desc`)}
+              isLast={i === stepKeys.length - 1}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    </Section>
+  )
+}
+
+export { Process, type ProcessProps }

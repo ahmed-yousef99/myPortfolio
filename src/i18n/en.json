@@ -1,0 +1,348 @@
+{
+  "nav": {
+    "logo": "AY",
+    "links": {
+      "services": "Services",
+      "projects": "Projects",
+      "process": "Process",
+      "pricing": "Investment",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "identity": {
+      "name": "Ahmed Youssef",
+      "title": "Full-Stack Web Developer"
+    },
+    "headline": "Websites, Stores, Dashboards & SaaS — Built Directly for Your Business.",
+    "subhead": "Custom-built solutions designed to be fast, reliable, and easy to maintain — with direct communication in English and Arabic.",
+    "differentiator": "I build every project personally. The person you talk to is the person writing the code.",
+    "ctaPrimary": "Explore Our Offers",
+    "ctaSecondary": "See My Work"
+  },
+  "whatsapp": {
+    "tooltip": "Free consultation · Response within 24 hours"
+  },
+  "services": {
+    "eyebrow": "Development Expertise",
+    "title": "Business Software Engineered for Scale",
+    "subtitle": "Custom web solutions designed for businesses that need more than a basic website — from customer-facing platforms to internal systems that support daily operations, automation, and growth.",
+    "cards": {
+      "presence": {
+        "title": "Business Presence",
+        "desc": "Professional websites, landing pages, and digital experiences designed to represent your brand with clarity, performance, and credibility."
+      },
+      "commerce": {
+        "title": "Online Commerce",
+        "desc": "E-commerce platforms with product management, secure payments, inventory control, customer accounts, and order workflows."
+      },
+      "operations": {
+        "title": "Operations Management",
+        "desc": "Admin dashboards and internal systems that centralize products, customers, orders, reporting, and business operations."
+      },
+      "platforms": {
+        "title": "Software Platforms",
+        "desc": "SaaS applications, customer portals, subscription systems, and scalable web platforms built for long-term growth."
+      },
+      "automation": {
+        "title": "Integrations & Automation",
+        "desc": "Custom APIs, third-party integrations, workflow automation, and backend services that connect business-critical systems."
+      },
+      "custom": {
+        "title": "Custom Development",
+        "desc": "Tailored software solutions engineered around unique business requirements, processes, and operational workflows."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Featured Work",
+    "featuredTitle": "Featured Projects",
+    "subtitle": "Real projects showcasing full-stack development and UI engineering.",
+    "viewProject": "View Project",
+    "openLive": "Live Demo",
+    "viewSource": "Source Code",
+    "viewGitHub": "View on GitHub",
+    "statusLive": "Live",
+    "gallery": "Gallery",
+    "techStack": "Tech Stack",
+    "previousImage": "Previous image",
+    "nextImage": "Next image"
+  },
+  "process": {
+    "eyebrow": "How It Works",
+    "title": "A Clear Process From Idea to Launch",
+    "subtitle": "A structured development workflow that keeps your project clear, organized, and moving forward from the first conversation to final delivery.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery & Strategy",
+        "desc": "We define the project goals, target users, core features, business requirements, and the best technical direction before development starts."
+      },
+      "planning": {
+        "title": "Planning & Architecture",
+        "desc": "I turn the idea into a clear execution plan, including structure, user flows, database needs, integrations, and development priorities."
+      },
+      "development": {
+        "title": "Design & Development",
+        "desc": "I build the frontend, backend, database, dashboards, and integrations with a focus on performance, maintainability, and user experience."
+      },
+      "review": {
+        "title": "Review & Refinement",
+        "desc": "We review the project together, test key flows, improve details, fix issues, and refine the experience before launch."
+      },
+      "launch": {
+        "title": "Launch & Support",
+        "desc": "The project is deployed, tested in production, and prepared for real users, with support for improvements, fixes, and future growth."
+      }
+    }
+  },
+  "whyMe": {
+    "eyebrow": "Why Businesses Choose to Work With Me",
+    "title": "More Than Development — A Long-Term Technology Partner",
+    "subtitle": "Building software is easy. Building systems that remain reliable, maintainable, and valuable as a business grows is where experience matters.",
+    "cards": {
+      "decisions": {
+        "title": "Business-Driven Decisions",
+        "desc": "Every feature, workflow, and technical decision is evaluated based on business impact, user needs, and long-term value—not just implementation convenience."
+      },
+      "process": {
+        "title": "Built Around Your Process",
+        "desc": "Software should adapt to the way a business operates, not force a business to adapt to software. Every solution is tailored around real operational workflows."
+      },
+      "ownership": {
+        "title": "End-to-End Responsibility",
+        "desc": "One person remains accountable for the entire lifecycle of the project—from planning and architecture to deployment and refinement."
+      },
+      "longevity": {
+        "title": "Engineered for Longevity",
+        "desc": "Projects are structured to remain maintainable, understandable, and extensible long after the initial launch, reducing future technical debt."
+      },
+      "execution": {
+        "title": "Clear Execution",
+        "desc": "Transparent communication, defined milestones, and predictable delivery ensure progress is visible and expectations remain aligned throughout the project."
+      },
+      "simplicity": {
+        "title": "Performance Without Complexity",
+        "desc": "The focus is not on adding more technology, but on delivering efficient solutions that remain fast, stable, and practical to operate."
+      }
+    }
+  },
+  "techStack": {
+    "eyebrow": "System Architecture",
+    "title": "How Modern Platforms Are Built",
+    "subtitle": "A high-level view of how I design, connect, secure, and deploy production-ready software systems.",
+    "startNode": "Project Request",
+    "endNode": "Production-Ready Platform",
+    "decisions": {
+      "auth": "Is access protected?",
+      "data": "Does the request need stored data?"
+    },
+    "branches": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "layers": {
+      "client": {
+        "label": "User Experience",
+        "desc": "Interfaces and experiences users interact with every day.",
+        "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      },
+      "auth": {
+        "label": "Security & Access",
+        "desc": "Authentication gateway that validates every request before it reaches the application.",
+        "items": ["NextAuth", "JWT"]
+      },
+      "application": {
+        "label": "Application Logic",
+        "desc": "Server-side logic, business rules, and API orchestration.",
+        "items": ["Node.js", "Express.js", "REST APIs"]
+      },
+      "data": {
+        "label": "Data & Persistence",
+        "desc": "Relational and document databases for structured application data and storage.",
+        "items": ["PostgreSQL", "MongoDB"]
+      },
+      "integrations": {
+        "label": "External Services",
+        "desc": "Third-party services for payments, billing, email and notifications.",
+        "items": ["Stripe", "Razorpay", "Nodemailer", "External APIs"]
+      },
+      "infrastructure": {
+        "label": "Infrastructure & Deployment",
+        "desc": "Infrastructure layer automations, containers and cloud delivery nodes powering the system.",
+        "items": ["Docker", "CI/CD", "Git", "Vercel", "Render", "Netlify"]
+      }
+    },
+    "flows": {
+      "request": "Secure HTTPS",
+      "validated": "Authorized Requests",
+      "queries": "Database Queries",
+      "apiCalls": "Service Integrations"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Project Investment",
+    "title": "Software Solutions & Engagement Models",
+    "subtitle": "Choose the type of solution that matches your goals. Each project is scoped individually based on features, integrations, complexity, and delivery needs.",
+    "trust": "Project scope and cost are defined after understanding your goals, required features, integrations, and delivery needs.",
+    "cards": {
+      "presence": {
+        "title": "Business Presence",
+        "subtitle": "Professional websites that establish a strong online identity.",
+        "features": [
+          "Brand-aligned responsive design",
+          "SEO-optimized architecture",
+          "Content management integration",
+          "Performance-first implementation",
+          "Analytics & conversion tracking"
+        ],
+        "cta": "Discuss Your Project"
+      },
+      "commerce": {
+        "title": "Commerce Platform",
+        "subtitle": "End-to-end selling infrastructure for your products and services.",
+        "features": [
+          "Product catalog & inventory system",
+          "Payment gateway integration",
+          "Order management & fulfillment",
+          "Customer accounts & dashboards",
+          "Shipping & tax automation"
+        ],
+        "cta": "Discuss Your Project"
+      },
+      "systems": {
+        "title": "Business Systems",
+        "subtitle": "Custom operational software tailored to your workflow.",
+        "features": [
+          "Custom business logic & workflows",
+          "Role-based access & permissions",
+          "Third-party API integrations",
+          "Real-time dashboards & reporting",
+          "Scalable cloud architecture"
+        ],
+        "cta": "Discuss Your Project"
+      },
+      "transformation": {
+        "title": "Digital Transformation",
+        "subtitle": "Modernizing existing business systems through automation and integration.",
+        "features": [
+          "Legacy system modernization",
+          "Process automation",
+          "API connectivity",
+          "Internal workflow optimization",
+          "Performance & scalability improvements"
+        ],
+        "cta": "Discuss Your Project"
+      }
+    }
+  },
+  "ctaBanner": {
+    "eyebrow": "Ready to Build?",
+    "title": "Have a project idea but not sure where to start?",
+    "text": "Tell me what you want to build, and I’ll help turn it into a clear technical plan.",
+    "button": "Contact Me",
+    "microcopy": "Response within 24 hours",
+    "checklist": [
+      "Clear project scope",
+      "Technical direction",
+      "No commitment"
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "q": "How long does it take to build a project?",
+      "a": "A timeline is estimated before development begins based on your specific requirements. Business websites typically take 1–2 weeks to complete, while e-commerce platforms range from 3–6 weeks depending on features and integrations. Custom systems vary by scope and are scoped during our initial consultation. The timeline is reviewed and agreed upon before any development work starts."
+    },
+    "q2": {
+      "q": "Do you provide hosting and domain setup?",
+      "a": "Yes, every project is deployed and configured for production before handover. I handle deployment on platforms like Vercel, Netlify, or Render, and can also set up dedicated servers depending on your requirements. Domain configuration, SSL certificates, and environment setup are all included. The project is delivered fully production-ready."
+    },
+    "q3": {
+      "q": "Do you provide an admin dashboard?",
+      "a": "Dashboards are custom-built when your project requires management of users, content, products, orders, or permissions. Each dashboard is tailored to your specific business workflow rather than using a generic template. Features like role-based access, reporting, and analytics are included based on your operational needs."
+    },
+    "q4": {
+      "q": "Can the project be expanded later?",
+      "a": "Yes, the architecture is designed to be scalable from the start. New features can be added without rewriting the existing codebase, which saves both time and cost. This approach avoids the need to rebuild from scratch when your business grows or requirements change."
+    },
+    "q5": {
+      "q": "Do you provide maintenance and updates?",
+      "a": "Ongoing maintenance is available and can be arranged to suit your needs. This includes bug fixes, security updates, performance improvements, and feature additions. Regular monitoring and updates keep the project stable, secure, and performing well over time."
+    },
+    "q6": {
+      "q": "What happens after the project is launched?",
+      "a": "After launch, I verify that everything is running correctly in the production environment and monitor for any issues. I remain available to address post-launch adjustments, implement improvements, and support future growth. Long-term collaboration is welcome if you need ongoing development or support."
+    },
+    "q7": {
+      "q": "Do I need technical knowledge before starting?",
+      "a": "No technical knowledge is required on your end. You only need to explain your business idea, goals, and what you want the project to achieve. I handle all the technical planning, architecture decisions, and implementation from start to finish."
+    },
+    "q8": {
+      "q": "How does the project start?",
+      "a": "The project starts with an initial discussion where I learn about your business, goals, and requirements. Based on that conversation, I define the project scope, estimate the timeline and cost, and present a clear plan before any development begins. Once the plan is agreed, development starts with regular updates throughout the process."
+    }
+  },
+  "ctaBanner2": {
+    "title": "Have a project idea?",
+    "subtitle": "Tell me about your project and I'll help you define the best way to build it, whether it's a website, e-commerce store, dashboard, or custom system.",
+    "button": "Send Project Details"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's Build Something Together",
+    "subtitle": "Describe your project and I'll get back to you within 24 hours.",
+    "directLabels": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "name": "Your name",
+      "type": "Project type",
+      "details": "Project details",
+      "submit": "Send Project Details",
+      "sending": "Sending..."
+    },
+    "placeholder": {
+      "name": "e.g. Ahmed",
+      "email": "Email address",
+      "details": "Describe your project, business goals, required features, and anything else that will help me understand your vision."
+    },
+    "errors": {
+      "name": "Name is required",
+      "email": "Email is required",
+      "details": "Project details are required"
+    },
+    "success": "Message sent successfully! I'll get back to you within 24 hours.",
+    "error": "Failed to send message. Please try again or contact me directly on WhatsApp.",
+    "startProject": "Start Your Project",
+    "or": "or contact me directly",
+    "typeOptions": [
+      "Website",
+      "E-commerce Store",
+      "Dashboard / Admin Panel",
+      "SaaS Platform",
+      "Custom Integration",
+      "Consulting"
+    ]
+  },
+  "footer": {
+    "tagline": "Full-Stack Web Developer building custom websites, stores, dashboards, and SaaS applications.",
+    "description": "Full-Stack Web Developer building custom websites, stores, dashboards, and SaaS applications.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "serviceItems": [
+      "Business Presence",
+      "Online Commerce",
+      "Operations Management",
+      "Software Platforms",
+      "Integrations & Automation",
+      "Custom Development"
+    ],
+    "copyright": "© Ahmed Youssef. All rights reserved."
+  }
+}

@@ -1,0 +1,87 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        canvas: 'var(--color-canvas)',
+        surface: {
+          1: 'var(--color-surface-1)',
+          2: 'var(--color-surface-2)',
+          3: 'var(--color-surface-3)',
+          4: 'var(--color-surface-4)',
+        },
+        ink: 'var(--color-ink)',
+        'ink-muted': 'var(--color-ink-muted)',
+        'ink-subtle': 'var(--color-ink-subtle)',
+        'ink-tertiary': 'var(--color-ink-tertiary)',
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          focus: 'var(--color-accent-focus)',
+        },
+        'on-accent': 'var(--color-on-accent)',
+        hairline: {
+          DEFAULT: 'var(--color-hairline)',
+          strong: 'var(--color-hairline-strong)',
+          tertiary: 'var(--color-hairline-tertiary)',
+        },
+        inverse: {
+          canvas: 'var(--color-inverse-canvas)',
+          surface: {
+            1: 'var(--color-inverse-surface-1)',
+            2: 'var(--color-inverse-surface-2)',
+          },
+          ink: 'var(--color-inverse-ink)',
+        },
+        'brand-secure': 'var(--color-brand-secure)',
+        'semantic-success': 'var(--color-semantic-success)',
+        'semantic-overlay': 'var(--color-semantic-overlay)',
+      },
+      fontFamily: {
+        display: ['Geist Display', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
+        text: ['Geist Text', 'SF Pro Text', '-apple-system', 'system-ui', 'sans-serif'],
+        'display-ar': ['Noto Kufi Arabic', 'sans-serif'],
+        'text-ar': ['Noto Sans Arabic', 'sans-serif'],
+      },
+      fontSize: {
+        'display-xl': ['80px', { lineHeight: '1.05', letterSpacing: '-0.03em', fontWeight: '600' }],
+        'display-lg': ['56px', { lineHeight: '1.10', letterSpacing: '-0.018em', fontWeight: '600' }],
+        'display-md': ['40px', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '600' }],
+        headline: ['28px', { lineHeight: '1.20', letterSpacing: '-0.006em', fontWeight: '600' }],
+        'card-title': ['22px', { lineHeight: '1.25', letterSpacing: '-0.004em', fontWeight: '500' }],
+        subhead: ['20px', { lineHeight: '1.40', letterSpacing: '-0.002em', fontWeight: '400' }],
+        'body-lg': ['18px', { lineHeight: '1.50', letterSpacing: '-0.001em', fontWeight: '400' }],
+        body: ['16px', { lineHeight: '1.50', letterSpacing: '-0.0005em', fontWeight: '400' }],
+        'body-sm': ['14px', { lineHeight: '1.50', letterSpacing: '0', fontWeight: '400' }],
+        caption: ['12px', { lineHeight: '1.40', letterSpacing: '0', fontWeight: '400' }],
+        button: ['14px', { lineHeight: '1.20', letterSpacing: '0', fontWeight: '500' }],
+        eyebrow: ['13px', { lineHeight: '1.30', letterSpacing: '0.04em', fontWeight: '500' }],
+      },
+      borderRadius: {
+        xs: '4px',
+        sm: '6px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        xxl: '24px',
+        pill: '9999px',
+        full: '9999px',
+      },
+      spacing: {
+        xxs: '4px',
+        xs: '8px',
+        sm: '12px',
+        md: '16px',
+        lg: '24px',
+        xl: '32px',
+        xxl: '48px',
+        section: '96px',
+      },
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-canvas: #010102;
+    --color-surface-1: #0f1011;
+    --color-surface-2: #141516;
+    --color-surface-3: #18191a;
+    --color-surface-4: #191a1b;
+    --color-ink: #f7f8f8;
+    --color-ink-muted: #d0d6e0;
+    --color-ink-subtle: #8a8f98;
+    --color-ink-tertiary: #62666d;
+    --color-accent: #5e6ad2;
+    --color-accent-hover: #828fff;
+    --color-accent-focus: #5e69d1;
+    --color-on-accent: #ffffff;
+    --color-hairline: #23252a;
+    --color-hairline-strong: #34343a;
+    --color-hairline-tertiary: #3e3e44;
+    --color-inverse-canvas: #ffffff;
+    --color-inverse-surface-1: #f5f6f6;
+    --color-inverse-surface-2: #f6f7f7;
+    --color-inverse-ink: #000000;
+    --color-brand-secure: #7a7fad;
+    --color-semantic-success: #27a644;
+    --color-semantic-overlay: #000000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: 'Geist Text', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .hairline {
+    border: 1px solid var(--color-hairline);
+  }
+  .hairline-strong {
+    border: 1px solid var(--color-hairline-strong);
+  }
+  .hairline-bottom {
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  .radial-glow {
+    background: radial-gradient(ellipse at center, var(--color-accent) 0%, transparent 70%);
+  }
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .dot-grid {
+    background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .animate-orb {
+    animation: orbFloat 20s ease-in-out infinite;
+  }
+  .animate-orb-slow {
+    animation: orbFloat 30s ease-in-out infinite;
+  }
+  .animate-orb-reverse {
+    animation: orbFloat 25s ease-in-out infinite reverse;
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.02); }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 0.375rem 0;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/*
+  hero-lcp-fade: CSS-only fade-in for the h1 (LCP element).
+  Starts immediately when the stylesheet loads — no JS required.
+  Duration is short (0.4s) to minimize LCP delay while still
+  feeling polished. Uses will-change to hint the GPU compositor.
+*/
+@keyframes heroLcpFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-lcp-fade {
+  animation: heroLcpFadeIn 0.4s ease-out both;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-lcp-fade {
+    animation: none;
+  }
+}
+
+/* ─── React Flow overrides ─── */
+
+.react-flow.dark {
+  --xy-background-color: transparent;
+}
+
+.react-flow .react-flow__handle {
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Animated dash on active edges only (triggered via JS class) */
+@keyframes flowDash {
+  from { stroke-dashoffset: 20; }
+  to { stroke-dashoffset: 0; }
+}
+
+.flow-edge-dash {
+  animation: flowDash 1.2s linear infinite;
+}
+
