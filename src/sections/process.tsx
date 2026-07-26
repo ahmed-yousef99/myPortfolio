@@ -5,13 +5,7 @@ import { ProcessStep } from '@/components/cards/process-step'
 
 const stepKeys = ['discovery', 'planning', 'development', 'review', 'launch'] as const
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  },
-}
+
 
 interface ProcessProps {
   className?: string
@@ -50,7 +44,7 @@ function Process({ className }: ProcessProps) {
             />
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   )
 }
