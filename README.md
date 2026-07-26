@@ -3,6 +3,7 @@
 A premium bilingual (English / Arabic) personal marketing portfolio website built for a full-stack web developer. Features a Linear-inspired dark theme, smooth animations, and end-to-end RTL support.
 
 ## Tech Stack
+live https://my-portfolio-opal-sigma-50.vercel.app/
 
 | Layer | Technology |
 |-------|-----------|
