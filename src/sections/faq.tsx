@@ -25,14 +25,13 @@ function Faq({ className }: FaqProps) {
   const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const faqKeys = ['timeline', 'stack', 'revisions', 'maintenance', 'ownership', 'start'] as const
+  const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'] as const
 
   return (
     <Section
       id="faq"
       eyebrow={t('faq.eyebrow')}
       title={t('faq.title')}
-      subtitle={t('faq.subtitle')}
       className={className}
     >
       <motion.div
@@ -49,7 +48,7 @@ function Faq({ className }: FaqProps) {
               className="w-full flex items-center justify-between gap-4 px-6 py-5 rounded-lg bg-surface-1 border border-hairline text-left transition-colors hover:border-hairline-strong"
               aria-expanded={openIndex === index}
             >
-              <span className="text-ink font-medium">{t(`faq.items.${key}.q`)}</span>
+              <span className="text-ink font-medium">{t(`faq.${key}.q`)}</span>
               <LuPlus
                 size={16}
                 className={`text-ink-subtle shrink-0 transition-transform duration-200 ${openIndex === index ? 'rotate-45' : ''}`}
@@ -65,7 +64,7 @@ function Faq({ className }: FaqProps) {
                   className="overflow-hidden"
                 >
                   <p className="px-6 py-4 text-ink-muted text-sm leading-relaxed border-x border-b border-hairline rounded-b-lg bg-surface-1">
-                    {t(`faq.items.${key}.a`)}
+                    {t(`faq.${key}.a`)}
                   </p>
                 </motion.div>
               )}
