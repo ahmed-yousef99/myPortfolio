@@ -1,5 +1,4 @@
 import { lazy, Suspense } from 'react'
-import { motion, type Variants } from 'framer-motion'
 import { LuArrowRight } from 'react-icons/lu'
 import { useLanguage } from '@/hooks/useLanguage'
 import { Button } from '@/components/ui/button'
@@ -12,16 +11,6 @@ import { trackCtaClick } from '@/lib/analytics'
 const HeroScene = lazy(() =>
   import('@/components/hero/hero-scene').then(m => ({ default: m.HeroScene }))
 )
-
-// These variants only apply to elements BELOW the h1 — they don't affect LCP.
-const belowFoldVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: i * 0.1 },
-  }),
-}
 
 interface HeroProps {
   className?: string
