@@ -121,3 +121,4 @@ function Hero({ className }: HeroProps) {
 }
 
 export { Hero, type HeroProps }
+

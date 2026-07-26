@@ -18,7 +18,7 @@ const containerVariants: Variants = {
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  visible: (i: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const } }),
 }
 
 interface FeaturedProjectsProps {
@@ -52,14 +52,15 @@ function FeaturedProjects({ className }: FeaturedProjectsProps) {
 
           <MagicBentoGroup spotlightRadius={550}>
             <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
+              
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
             >
-              {featuredProjects.map((project) => (
-                <motion.div key={project.id} variants={cardVariants}>
+              {featuredProjects.map((project, index) => (
+                <motion.div key={project.id} variants={cardVariants}
+            custom={typeof index !== "undefined" ? index : 0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }}>
                   <ProjectCard
                     project={project}
                     viewProjectLabel={t('projects.viewProject')}
@@ -95,3 +96,4 @@ function FeaturedProjects({ className }: FeaturedProjectsProps) {
 }
 
 export { FeaturedProjects, type FeaturedProjectsProps }
+

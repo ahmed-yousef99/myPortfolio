@@ -59,7 +59,7 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  visible: (i: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const } }),
 }
 
 interface ContactProps {
@@ -144,14 +144,15 @@ function Contact({ className }: ContactProps) {
     <section id="contact" className={cn('py-section', className)}>
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
+          
           className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start"
         >
           {/* Left: info */}
-          <motion.div variants={itemVariants} className="relative flex flex-col gap-6">
+          <motion.div variants={itemVariants}
+            custom={typeof index !== "undefined" ? index : 0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }} className="relative flex flex-col gap-6">
             <div
               className="pointer-events-none absolute -top-20 -start-20 w-64 h-64 opacity-10"
               style={{
@@ -191,7 +192,11 @@ function Contact({ className }: ContactProps) {
           </motion.div>
 
           {/* Right: form */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants}
+            custom={typeof index !== "undefined" ? index : 0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }}>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-4 p-6 rounded-xl bg-surface-1 border border-hairline"
@@ -268,3 +273,4 @@ function Contact({ className }: ContactProps) {
 }
 
 export { Contact, type ContactProps }
+

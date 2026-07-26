@@ -22,7 +22,7 @@ function Process({ className }: ProcessProps) {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, x: lang === 'ar' ? 20 : -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+    visible: (i: number = 0) => ({ opacity: 1, x: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const } }),
   }
 
   return (
@@ -33,15 +33,15 @@ function Process({ className }: ProcessProps) {
       subtitle={t('process.subtitle')}
       className={className}
     >
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
+      <div
         className="max-w-2xl"
       >
         {stepKeys.map((key, i) => (
-          <motion.div key={key} variants={itemVariants}>
+          <motion.div key={key} variants={itemVariants}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }}>
             <ProcessStep
               number={i + 1}
               title={t(`process.steps.${key}.title`)}
@@ -56,3 +56,5 @@ function Process({ className }: ProcessProps) {
 }
 
 export { Process, type ProcessProps }
+
+

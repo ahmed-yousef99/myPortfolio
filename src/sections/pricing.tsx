@@ -21,7 +21,7 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  visible: (i: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const } }),
 }
 
 interface PricingProps {
@@ -41,14 +41,15 @@ function Pricing({ className }: PricingProps) {
     >
       <MagicBentoGroup spotlightRadius={550}>
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
+          
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
         >
-          {cardKeys.map((key) => (
-            <motion.div key={key} variants={cardVariants} className="flex">
+          {cardKeys.map((key, index) => (
+            <motion.div key={key} variants={cardVariants}
+            custom={typeof index !== "undefined" ? index : 0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }} className="flex">
               <PricingCard
                 title={t(`pricing.cards.${key}.title`)}
                 subtitle={t(`pricing.cards.${key}.subtitle`)}
@@ -69,3 +70,4 @@ function Pricing({ className }: PricingProps) {
 }
 
 export { Pricing, type PricingProps }
+

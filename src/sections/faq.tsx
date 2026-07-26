@@ -14,7 +14,7 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' as const } },
+  visible: (i: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.1, ease: 'easeOut' as const } }),
 }
 
 interface FaqProps {
@@ -35,14 +35,15 @@ function Faq({ className }: FaqProps) {
       className={className}
     >
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
+        
         className="flex flex-col gap-2"
       >
         {faqKeys.map((key, index) => (
-          <motion.div key={key} variants={itemVariants}>
+          <motion.div key={key} variants={itemVariants}
+            custom={typeof index !== "undefined" ? index : 0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: '-50px' }}>
             <button
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full flex items-center justify-between gap-4 px-6 py-5 rounded-lg bg-surface-1 border border-hairline text-left transition-colors hover:border-hairline-strong"
